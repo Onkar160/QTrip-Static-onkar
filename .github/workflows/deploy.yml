@@ -18,4 +18,4 @@ jobs:
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-args: '--prod'
-          working-directory: ./  # Path to your project if it's not at the root
+
