@@ -11,11 +11,9 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@latest
+        uses: actions/checkout@v3
 
       - name: Deploy to Vercel
-        uses: amondnet/vercel-action@latest
+        uses: vercel/vercel@v2
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-args: '--prod'
-
