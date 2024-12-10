@@ -17,6 +17,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Step 2: Deploy to Vercel using the CLI
+      # Step 2: Install Vercel CLI (if needed)
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
+      # Step 3: Deploy to Vercel with automatic confirmation
       - name: Deploy to Vercel
-        run: npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }} --yes
