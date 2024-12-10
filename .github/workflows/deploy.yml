@@ -9,12 +9,14 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3  # Correct version
+    env:  # Environment variable for debug logging (optional but helpful)
+      ACTIONS_STEP_DEBUG: true
 
+    steps:
+      # Step 1: Checkout your repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Deploy to Vercel using the CLI
       - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v20  # Stable version
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-args: '--prod'
+        run: npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
