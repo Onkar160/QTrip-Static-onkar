@@ -212,5 +212,23 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script>
+      const logoHover = document.querySelector(".navbar-brand");
+      const navLinksHover = document.getElementsByClassName("nav-link");
+
+      logoHover.style.borderRadius = "10px";
+      navLinksHover[0].style.borderRadius = "10px";
+      navLinksHover[1].style.borderRadius = "10px";
+
+      logoHover.addEventListener('mouseover', () => logoHover.style.backgroundColor = "#d1d1d1");
+      logoHover.addEventListener('mouseout', () => logoHover.style.backgroundColor = "#f5fafb");
+      logoHover.style.transition = "all 0.8s ease";
+      navLinksHover[0].addEventListener('mouseover', () => navLinksHover[0].style.backgroundColor = "#d1d1d1");
+      navLinksHover[1].addEventListener('mouseover', () => navLinksHover[1].style.backgroundColor = "#d1d1d1");
+      navLinksHover[0].addEventListener('mouseout', () => navLinksHover[0].style.backgroundColor = "#f5fafb");
+      navLinksHover[1].addEventListener('mouseout', () => navLinksHover[1].style.backgroundColor = "#f5fafb");
+      navLinksHover[0].style.transition = "all 0.8s ease";
+      navLinksHover[1].style.transition = "all 0.8s ease";
+    </script>
   </body>
 </html>
